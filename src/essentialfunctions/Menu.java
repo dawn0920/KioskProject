@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Menu {
-    String menuBurgers = "Burgers";
-    String menuDrinks = "Drinks";
-    String menuDesserts = "Desserts";
+    private final String menuBurgers = "Burgers";
+    private final String menuDrinks = "Drinks";
+    private final String menuDesserts = "Desserts";
 
     List<MenuItem> BurgersItems = new ArrayList<>();
     List<MenuItem> Menu = new ArrayList<>();
