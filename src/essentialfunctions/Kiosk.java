@@ -25,7 +25,9 @@ public class Kiosk {
         Number order;
         while (true){
             System.out.print("주문번호 : ");
+
             order = sc.nextInt();
+
             if (order.intValue() == 1) {
                 menuItems.add(FirsetMune);
             } else if (order.intValue() == 2) {
