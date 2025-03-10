@@ -20,7 +20,6 @@ public class Kiosk {
                 "4. Hamburger     | W 5.4 | 비프패티를 기반으로 야채가 들어간 기본버거\n" +
                 "0. 종료 \t\t\t | 종료\n");
 
-
         Scanner sc = new Scanner(System.in);
 
         Number order;
