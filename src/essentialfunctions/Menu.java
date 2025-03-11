@@ -10,6 +10,7 @@ public class Menu {
 
     List<MenuItem> BurgersItems = new ArrayList<>();
     List<MenuItem> Menu = new ArrayList<>();
+    List<MenuItem> Order = new ArrayList<>();
     MenuItem FirstBurger = new MenuItem("ShackBurger", 6.9, "토마토, 양상추, 쉑소스가 토핑된 치즈버거");
     MenuItem SecondBurger = new MenuItem("SmokeShack", 8.9, "베이컨, 체리 페퍼에 쉑소스가 토핑된 치즈버거");
     MenuItem ThirdBurger = new MenuItem("Cheeseburger", 6.9, "포테이토 번과 비프패티, 치즈가 토핑된 치즈버거");
@@ -38,7 +39,13 @@ public class Menu {
         System.out.println("1. " + getMenuBurgers());
         System.out.println("2. " + getMenuDesserts());
         System.out.println("3. " + getMenuDrinks());
-        System.out.println("0. 종료");
+        System.out.println("0. 종료\t\t| 종료");
+    }
+
+    public void OrderPrint() {
+        System.out.println("[ ORDER MENU ]");
+        System.out.println("4. Orders\t| 장바구니를 확인 후 주문합니다.");
+        System.out.println("5. Cancel\t| 진행중인 주문을 취소합니다.");
     }
 
     public List<MenuItem> getBurgersItems() {
