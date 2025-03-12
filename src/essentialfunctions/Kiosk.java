@@ -13,9 +13,12 @@ public class Kiosk extends Menu{
             MenuPrint();
             Number menu;
 
+            // Order List에 값이 없을때(처음) 실행
             if (Order.isEmpty() == true){
                 System.out.print("선택 : ");
                 menu = sc.nextInt();
+
+                // 번호 1을 입력시 아래 코드 실행
                 if (menu.intValue() == 1) {
                     System.out.println("");
                     BurgersItenPrint();
@@ -65,23 +68,30 @@ public class Kiosk extends Menu{
                         } break;
 
                     }
-                } else if (menu.intValue() == 2) {
+                }
+                else if (menu.intValue() == 2) {
                     System.out.println("\n미구현된 구역입니다.\n");
-                } else if (menu.intValue() == 3) {
+                }
+                else if (menu.intValue() == 3) {
                     System.out.println("\n미구현된 구역입니다.\n");
-                } else if (menu.intValue() == 0) {
+                }
+                else if (menu.intValue() == 0) {
                     System.out.println("\n주문을 종료합니다.");
                     break;
-                } else {
+                }
+                else {
                     System.out.println("\n잘못된 입력입니다. 다시 입력해주세요.\n");
                 }
             }
-            // Order에 값이 등러갈 경우
+
+            // Order List에 값이 들어온 후 실행
             else {
                 System.out.println("아래 메뉴판을 보시고 메뉴를 골라 입력해주세요.\n");
                 OrderPrint();
                 System.out.print("선택 : ");
                 menu = sc.nextInt();
+
+                // 번호 1을 입력시 아래 코드 실행
                 if (menu.intValue() == 1) {
                     System.out.println("");
                     BurgersItenPrint();
@@ -130,14 +140,19 @@ public class Kiosk extends Menu{
                             }
                         } break;
                     }
-                } else if (menu.intValue() == 2) {
+                }
+                else if (menu.intValue() == 2) {
                     System.out.println("\n미구현된 구역입니다.\n");
-                } else if (menu.intValue() == 3) {
+                }
+                else if (menu.intValue() == 3) {
                     System.out.println("\n미구현된 구역입니다.\n");
-                } else if (menu.intValue() == 0) {
+                }
+                else if (menu.intValue() == 0) {
                     System.out.println("\n주문을 종료합니다.");
                     break;
-                } else if(menu.intValue() == 4){
+                }
+                // 번호 4를 입력시 아래 코드 실행
+                else if(menu.intValue() == 4){
                     System.out.println("\n아래와 같이 주문하시겠습니까?\n");
                     System.out.println("[ Orders ]");
                     double total = 0;
@@ -161,7 +176,8 @@ public class Kiosk extends Menu{
                         }
                     }
 
-                } else if(menu.intValue() == 5) {
+                }
+                else if(menu.intValue() == 5) {
                     Menu.clear(); // 리스트를 한번에 삭제
                 }
                 else {
