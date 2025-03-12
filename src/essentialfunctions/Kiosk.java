@@ -1,5 +1,6 @@
 package essentialfunctions;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -8,6 +9,8 @@ public class Kiosk extends Menu{
 
     public void start(){
         Scanner sc = new Scanner(System.in);
+        DecimalFormat df = new DecimalFormat("#.##");
+        // double 덧셈 사용시 숫자가 고장나는걸 대비 소숫점 이하 두자리로 제한
 
         while(true) {
             MenuPrint();
@@ -21,7 +24,7 @@ public class Kiosk extends Menu{
                 // 번호 1을 입력시 아래 코드 실행
                 if (menu.intValue() == 1) {
                     System.out.println("");
-                    BurgersItenPrint();
+                    BurgersItemPrint();
                     Number order;
 
                     while (true){
@@ -94,7 +97,7 @@ public class Kiosk extends Menu{
                 // 번호 1을 입력시 아래 코드 실행
                 if (menu.intValue() == 1) {
                     System.out.println("");
-                    BurgersItenPrint();
+                    BurgersItemPrint();
                     Number order;
 
                     while (true){
@@ -161,10 +164,10 @@ public class Kiosk extends Menu{
                         total += item.getPrice();
                     }
                     System.out.println("\n[ Total ]");
-                    System.out.println("\t W " + total +"\n");
+                    System.out.println("\t W " + df.format(total) +"\n");
 
                     while(true){
-                        System.out.println("\n1. 주문\t2. 메뉴판");
+                        System.out.println("\n1. 주문\t\t2. 메뉴판\t3. 메뉴삭제");
                         Number FinalCheck = sc.nextInt();
                         if (FinalCheck.intValue() == 1){
 
@@ -191,10 +194,23 @@ public class Kiosk extends Menu{
                                     System.out.println("잘못된 입력입니다. 다시 입력해주세요.");
                                 }
                             }
-                            System.out.println("\n주문이 완료되었습니다. 금액은 W "+ total +" 입니다.");
+                            System.out.println("\n주문이 완료되었습니다. 금액은 W "+ df.format(total) +" 입니다.");
                             return; // return을 사용하면 프로그램이 완전히 종료된다.
-                        } else if(FinalCheck.intValue() == 2) {
+                        }
+                        else if(FinalCheck.intValue() == 2) {
                             break;
+                        } else if (FinalCheck.intValue() == 3) {
+                            System.out.println("장바구니에서 지울 메뉴이름을 입력해주세요");
+                            String removeMenu = sc.next();
+                            rmoveMenu(removeMenu);
+
+                            total = 0;
+                            for (MenuItem item : Order){
+                                System.out.println("   " + item.getName() + "\t| W " + item.getPrice() + "\t| " + item.getExplanation());
+                                total += item.getPrice();
+                            }
+                            System.out.println("\n[ Total ]");
+                            System.out.println("\t W " + df.format(total) +"\n");
                         } else {
                             System.out.println("\n잘못된 입력입니다. 다시 입력해주세요.\n");
                         }

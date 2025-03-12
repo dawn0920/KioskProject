@@ -2,6 +2,9 @@ package essentialfunctions;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.stream.Collectors;
 
 public class Menu {
     private final String menuBurgers = "Burgers";
@@ -23,15 +26,20 @@ public class Menu {
         BurgersItems.add(FourthBurger);
     }
 
-    public void BurgersItenPrint(){
+    public void BurgersItemPrint(){
+        // 이해 필요 !
         System.out.println("[ " + getMenuBurgers() + " MENU ]");
-        for (int i = 0; i < BurgersItems.size(); i++) { // 인덱스 필요로 인한 for문 사용
-            MenuItem item = BurgersItems.get(i);
-            System.out.println((i + 1) + ". " + item.getName() + "\t| W " + item.getPrice() + "\t| " + item.getExplanation());
-        }
+
+        // AtomicInteger를 사용하여 번호를 증가시킴
+        AtomicInteger index = new AtomicInteger(1);
+
+        List<String> BurgerPrint = BurgersItems.stream()
+                .map(item -> index.getAndIncrement() + ". " + item.getName() + "\t| W " + item.getPrice() + "\t| " + item.getExplanation())
+                .collect(Collectors.toList());
+
+        // 출력
+        BurgerPrint.forEach(System.out::println);
         System.out.println("0. 뒤로가기");
-//        for (MenuItem item : menuItems)
-//        System.out.println(item + item.getName() + "\t| W " + item.getPrice() + "\t\t| " + item.getExplanation());
     }
 
     public void MenuPrint(){
@@ -47,6 +55,13 @@ public class Menu {
         System.out.println("4. Orders\t| 장바구니를 확인 후 주문합니다.");
         System.out.println("5. Cancel\t| 진행중인 주문을 취소합니다.");
     }
+
+    public void rmoveMenu(String removeMenu){
+        Order = Order.stream()
+                .filter(item -> !removeMenu.equals(item.getName()))
+                .collect(Collectors.toList());
+    }
+
 
     public List<MenuItem> getBurgersItems() {
         return BurgersItems;
