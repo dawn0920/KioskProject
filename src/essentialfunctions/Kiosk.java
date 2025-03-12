@@ -167,6 +167,30 @@ public class Kiosk extends Menu{
                         System.out.println("\n1. 주문\t2. 메뉴판");
                         Number FinalCheck = sc.nextInt();
                         if (FinalCheck.intValue() == 1){
+
+                            System.out.println("\n할인 정보를 입력해주세요.");
+                            System.out.println("1. 국가 유공자\t : 10%\n" +
+                                    "2. 군인\t\t\t : 5%\n" +
+                                    "3. 학생\t\t\t : 3%\n" +
+                                    "4. 일반\t\t\t : 0%");
+                            while(true){
+                                int ChooseCustomer = sc.nextInt();
+                                if (ChooseCustomer == 1){
+                                    total = (double) Customer.VETERAN.apply(total);
+                                    break;
+                                } else if (ChooseCustomer == 2){
+                                    total = (double) Customer.SOLDIER.apply(total);
+                                    break;
+                                } else if (ChooseCustomer == 3){
+                                    total = (double) Customer.STUDENT.apply(total);
+                                    break;
+                                } else if (ChooseCustomer == 4){
+                                    total = (double) Customer.COMMON.apply(total);
+                                    break;
+                                } else {
+                                    System.out.println("잘못된 입력입니다. 다시 입력해주세요.");
+                                }
+                            }
                             System.out.println("\n주문이 완료되었습니다. 금액은 W "+ total +" 입니다.");
                             return; // return을 사용하면 프로그램이 완전히 종료된다.
                         } else if(FinalCheck.intValue() == 2) {
