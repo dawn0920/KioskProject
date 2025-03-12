@@ -57,9 +57,16 @@ public class Menu {
     }
 
     public void rmoveMenu(String removeMenu){
-        Order = Order.stream()
-                .filter(item -> !removeMenu.equals(item.getName()))
-                .collect(Collectors.toList());
+        if ("ShackBurger".equals(removeMenu) ||
+                "SmokeShack".equals(removeMenu) ||
+                "Cheeseburger".equals(removeMenu) ||
+                "Hamburger".equals(removeMenu)) {
+            Order = Order.stream()
+                    .filter(item -> !removeMenu.equals(item.getName()))
+                    .collect(Collectors.toList());
+        } else {
+            System.out.println("잘못된 입력입니다. 다시 시도해주세요.");
+        }
     }
 
 
