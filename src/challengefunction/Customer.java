@@ -1,4 +1,4 @@
-package essentialfunctions;
+package challengefunction;
 
 @FunctionalInterface // 함수형 인터페이스 선언(하나의 추상 메서드)
 interface total<T>{ // T는 타입 매개변수 -> 당 인터페이스를 사용시 타입을 지정할 수 있음

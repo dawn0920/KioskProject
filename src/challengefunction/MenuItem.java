@@ -1,4 +1,4 @@
-package essentialfunctions;
+package challengefunction;
 
 public class MenuItem {
     // 속성
