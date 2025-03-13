@@ -136,7 +136,7 @@ public class Kiosk extends challengefunction.Menu{
                                 System.out.println(OrderMenu.getName() + " 이 장바구니에 추가되었습니다.\n");
                                 break;
                             } else if (choose.intValue() == 2) {
-                                Menu.clear();
+                                Menu.clear(); // 장바구니에 들어가지 않아도 이전에 담은 기록은 지워져야하기 때문에 clear사용
                                 break;
                             } else {
                                 System.out.println("잘못된 입력입니다. 다시 입력해주세요.");

@@ -8,14 +8,22 @@ public class Menu {
     private final String menuDrinks = "Drinks";
     private final String menuDesserts = "Desserts";
 
-    List<MenuItem> BurgersItems = new ArrayList<>();
+    List<MenuItem> BurgersItems;
+    // = new ArrayList<>();
     List<MenuItem> Menu = new ArrayList<>();
-    MenuItem FirstBurger = new MenuItem("ShackBurger", 6.9, "토마토, 양상추, 쉑소스가 토핑된 치즈버거");
-    MenuItem SecondBurger = new MenuItem("SmokeShack", 8.9, "베이컨, 체리 페퍼에 쉑소스가 토핑된 치즈버거");
-    MenuItem ThirdBurger = new MenuItem("Cheeseburger", 6.9, "포테이토 번과 비프패티, 치즈가 토핑된 치즈버거");
-    MenuItem FourthBurger = new MenuItem("Hamburger", 5.4, "비프패티를 기반으로 야채가 들어간 기본버거");
 
-    public Menu(){
+    protected MenuItem FirstBurger;
+    protected MenuItem SecondBurger;
+    protected MenuItem ThirdBurger;
+    protected MenuItem FourthBurger;
+
+
+    public Menu() {
+        BurgersItems = new ArrayList<>();
+        FirstBurger = new MenuItem("ShackBurger", 6.9, "토마토, 양상추, 쉑소스가 토핑된 치즈버거");
+        SecondBurger = new MenuItem("SmokeShack", 8.9, "베이컨, 체리 페퍼에 쉑소스가 토핑된 치즈버거");
+        ThirdBurger = new MenuItem("Cheeseburger", 6.9, "포테이토 번과 비프패티, 치즈가 토핑된 치즈버거");
+        FourthBurger = new MenuItem("Hamburger", 5.4, "비프패티를 기반으로 야채가 들어간 기본버거");
         BurgersItems.add(FirstBurger);
         BurgersItems.add(SecondBurger);
         BurgersItems.add(ThirdBurger);
