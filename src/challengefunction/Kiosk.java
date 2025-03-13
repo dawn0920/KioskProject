@@ -1,9 +1,11 @@
 package challengefunction;
 
 import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
-public class Kiosk extends challengefunction.Menu {
+public class Kiosk extends challengefunction.Menu{
 
     public void start(){
         Scanner sc = new Scanner(System.in);

@@ -2,6 +2,7 @@ package challengefunction;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 
@@ -10,16 +11,15 @@ public class Menu {
     private final String menuDrinks = "Drinks";
     private final String menuDesserts = "Desserts";
 
-    List<MenuItem> BurgersItems;
+    List<MenuItem> BurgersItems = new ArrayList<>();
     List<MenuItem> Menu = new ArrayList<>();
     List<MenuItem> Order = new ArrayList<>();
+    MenuItem FirstBurger = new MenuItem("ShackBurger", 6.9, "토마토, 양상추, 쉑소스가 토핑된 치즈버거");
+    MenuItem SecondBurger = new MenuItem("SmokeShack", 8.9, "베이컨, 체리 페퍼에 쉑소스가 토핑된 치즈버거");
+    MenuItem ThirdBurger = new MenuItem("Cheeseburger", 6.9, "포테이토 번과 비프패티, 치즈가 토핑된 치즈버거");
+    MenuItem FourthBurger = new MenuItem("Hamburger", 5.4, "비프패티를 기반으로 야채가 들어간 기본버거");
 
     public Menu(){
-        BurgersItems = new ArrayList<>();
-        MenuItem FirstBurger = new MenuItem("ShackBurger", 6.9, "토마토, 양상추, 쉑소스가 토핑된 치즈버거");
-        MenuItem SecondBurger = new MenuItem("SmokeShack", 8.9, "베이컨, 체리 페퍼에 쉑소스가 토핑된 치즈버거");
-        MenuItem ThirdBurger = new MenuItem("Cheeseburger", 6.9, "포테이토 번과 비프패티, 치즈가 토핑된 치즈버거");
-        MenuItem FourthBurger = new MenuItem("Hamburger", 5.4, "비프패티를 기반으로 야채가 들어간 기본버거");
         BurgersItems.add(FirstBurger);
         BurgersItems.add(SecondBurger);
         BurgersItems.add(ThirdBurger);
@@ -30,7 +30,7 @@ public class Menu {
         // 이해 필요 !
         System.out.println("[ " + getMenuBurgers() + " MENU ]");
 
-        // AtomicInteger를 사용해 번호 증가
+        // AtomicInteger를 사용하여 번호를 증가시킴
         AtomicInteger index = new AtomicInteger(1);
 
         List<String> BurgerPrint = BurgersItems.stream()

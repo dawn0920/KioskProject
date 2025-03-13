@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Kiosk extends Menu{
+public class Kiosk extends essentialfunctions.Menu{
 
     public void start(){
         Scanner sc = new Scanner(System.in);
